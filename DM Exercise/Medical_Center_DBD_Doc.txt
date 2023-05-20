@@ -1,0 +1,37 @@
+MedicalCenter as mc
+-
+med_id PK int
+site_id building
+
+Doctors
+-
+doc_id PK int FK >- mc.site_id
+Name string
+Speciality string
+
+Visits
+-
+visit_id PK int
+doctor_id FK >- Doctors.doc_id
+patient_id FK >- Patients.patient_id
+date String
+
+Patients
+-
+patient_id PK int
+Name string
+insurance string
+birthday string
+
+Diagnoses
+-
+diagnosis_id PK int
+visit_id FK >- Visits.visit_id
+disease_id FK >- Diseases.disease_id
+notes string
+
+Diseases
+-
+disease_id PK int
+Name name
+Description string

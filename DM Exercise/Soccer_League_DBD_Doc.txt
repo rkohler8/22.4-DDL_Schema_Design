@@ -1,0 +1,55 @@
+Matches
+-
+match_id PK int
+home_team_id FK >- Teams.team_id
+away_team_id FK >- Teams.team_id
+location string
+date string
+start_time string
+season_id FK >- Seasons.season_id
+head_referee_id FK >- Referees.referee_id
+assistent_referee_1_id FK >- Referees.referee_id
+assistent_referee_2_id FK >- Referees.referee_id
+
+Referees
+-
+referee_id PK int
+name string
+
+Goals
+-
+goal_id PK int
+player_id FK >- Players.player_id
+match_id FK >- Matches.match_id
+
+Seasons
+-
+season_id PK int
+start_date string
+end_date string
+
+Players
+-
+player_id PK int
+name string
+birthday string
+height string
+current_team_id FK >- Teams.team_id
+
+Teams
+-
+team_id PK int
+name string
+city string
+
+Lineups
+-
+lineup_id PK int
+player_id FK >- Players.player_id
+team_id FK >- Teams.team_id
+
+Results
+-
+result_id PK int
+team_id FK >- Teams.team_id
+match_id FK >- Matches.match_id

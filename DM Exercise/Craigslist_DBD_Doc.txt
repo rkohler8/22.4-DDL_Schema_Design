@@ -1,0 +1,31 @@
+Craigslist as cl
+-
+CL_id PK int
+site_id string
+
+Posts
+-
+post_id PK int FK >- cl.site_id
+title string
+text string
+location string
+user_id FK >- Users.user_id
+region_id FK >- Region.region_id
+category_id FK >- Categories.category_id
+
+Region
+-
+region_id PK int
+name string
+
+Users
+-
+user_id PK int
+username string
+password string
+region string
+
+Categories
+-
+category_id PK int
+Name name
